@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=jMNzE_QCrd8
+
 # NodeJS, TypsScript y MongoDB
 `npm init -y`
 
