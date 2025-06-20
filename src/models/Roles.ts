@@ -1,11 +1,16 @@
 import mongoose, { Schema } from 'mongoose';
-import { Rol } from 'types/RolesTypes';
+import { Role } from 'types/RolesTypes';
 
-const RolSchema: Schema = new Schema<Rol>(
+const RoleSchema: Schema = new Schema<Role>(
   {
     name: {
       type: String,
       required: true,
+      unique: true
+    },
+    permissions: {
+      type: [String],
+      default: []
     }
   }, {
     timestamps: true,
@@ -13,4 +18,4 @@ const RolSchema: Schema = new Schema<Rol>(
   }
 )
 
-export const RolModel = mongoose.model<Rol>("Roles", RolSchema);
+export const RoleModel = mongoose.model<Role>("Roles", RoleSchema);

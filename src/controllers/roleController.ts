@@ -1,15 +1,18 @@
 import { Request, Response } from "express";
-import { RolRepository } from '@repositories/rolRepository';
-import { RolService } from '@services/rolService';
-import { IRolRepository, IRolService, Rol } from 'types/RolesTypes';
+import { RoleRepository } from '@repositories/roleRepository';
+import { RoleService } from '@services/roleService';
+import { IRoleRepository, IRoleService, Role } from 'types/RolesTypes';
 
-const rolRepository: IRolRepository = new RolRepository();
-const rolService: IRolService = new RolService(rolRepository);
+const roleRepository: IRoleRepository = new RoleRepository();
+const roleService: IRoleService = new RoleService(roleRepository);
 
 export const findRoles = async (req: Request, res: Response) => {
   try {
-    const roles = await rolService.findRoles();
-    if (roles.length === 0) res.status(404).json({ message: "no roles Found." });
+    const roles = await roleService.findRoles();
+    if (roles.length === 0) {
+      res.status(404).json({ message: "no roles Found." });
+      return;
+    }
 
     res.json(roles);
   } catch (error) {
@@ -20,8 +23,11 @@ export const findRoles = async (req: Request, res: Response) => {
 
 export const findRolById = async (req: Request, res: Response) => {
   try {
-    const rol = await rolService.findRolById(req.params.id);
-    if (!rol) res.status(404).json({ message: "Not role Found" });
+    const rol = await roleService.findRolById(req.params.id);
+    if (!rol) {
+      res.status(404).json({ message: "Not role Found" });
+      return;
+    }
 
     res.json(rol);
   } catch (error) {
@@ -32,8 +38,8 @@ export const findRolById = async (req: Request, res: Response) => {
 
 export const createRol = async (req: Request, res: Response) => {
   try {
-    const newrole: Rol = req.body;
-    const result = await rolService.createRol(newrole);
+    const newrole: Role = req.body;
+    const result = await roleService.createRole(newrole);
 
     res.status(201).json(result);
   } catch (error) {
@@ -44,8 +50,11 @@ export const createRol = async (req: Request, res: Response) => {
 
 export const updateRol = async (req: Request, res: Response) => {
   try {
-    const roles = await rolService.updateRol(req.params.id, req.body);
-    if (!roles) res.status(404).json({ message: "Not role Found" });
+    const roles = await roleService.updateRole(req.params.id, req.body);
+    if (!roles) {
+      res.status(404).json({ message: "Not role Found" });
+      return;
+    }
 
     res.json(roles);
   } catch (error) {
@@ -56,8 +65,11 @@ export const updateRol = async (req: Request, res: Response) => {
 
 export const deleteRol = async (req: Request, res: Response) => {
   try {
-    const roles = await rolService.deleteRol(req.params.id);
-    if (!roles) res.status(404).json({ message: "Not user Found" });
+    const roles = await roleService.deleteRole(req.params.id);
+    if (!roles) {
+      res.status(404).json({ message: "Not role Found" });
+      return;
+    }
 
     res.json(roles);
   } catch (error) {

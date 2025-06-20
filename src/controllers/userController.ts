@@ -9,7 +9,10 @@ const userService: IUserService = new UserService(userRepository);
 export const findUsers = async (req: Request, res: Response) => {
   try {
     const users = await userService.findUsers();
-    if (users.length === 0) res.status(404).json({ message: "no users Found." });
+    if (users.length === 0) {
+      res.status(404).json({ message: "no users Found." });
+      return;
+    }
 
     res.json(users);
   } catch (error) {
@@ -21,7 +24,10 @@ export const findUsers = async (req: Request, res: Response) => {
 export const findUserById = async (req: Request, res: Response) => {
   try {
     const users = await userService.findUserById(req.params.id);
-    if (!users) res.status(404).json({ message: "Not user Found" });
+    if (!users) {
+      res.status(404).json({ message: "Not user Found" });
+      return;
+    }
 
     res.json(users);
   } catch (error) {
@@ -45,7 +51,10 @@ export const createUser = async (req: Request, res: Response) => {
 export const updateUser = async (req: Request, res: Response) => {
   try {
     const users = await userService.updateUser(req.params.id, req.body);
-    if (!users) res.status(404).json({ message: "Not user Found" });
+    if (!users) {
+      res.status(404).json({ message: "Not user Found" });
+      return;
+    }
 
     res.json(users);
   } catch (error) {
@@ -57,7 +66,10 @@ export const updateUser = async (req: Request, res: Response) => {
 export const deleteUser = async (req: Request, res: Response) => {
   try {
     const users = await userService.deleteUser(req.params.id);
-    if (!users) res.status(404).json({ message: "Not user Found" });
+    if (!users) {
+      res.status(404).json({ message: "Not user Found" });
+      return;
+    }
 
     res.json(users);
   } catch (error) {

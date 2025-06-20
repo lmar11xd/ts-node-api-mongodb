@@ -1,4 +1,5 @@
 import { UserModel } from '@models/Users';
+import { Query } from 'types/RepositoryTypes';
 import { IUserRepository, User } from 'types/UsersTypes';
 
 export class UserRepository implements IUserRepository {
@@ -8,8 +9,12 @@ export class UserRepository implements IUserRepository {
     return await newUser.save();
   }
 
-  async find(): Promise<User[]> {
-    return await UserModel.find().exec();
+  async find(query?: Query): Promise<User[]> {
+    return await UserModel.find(query || {}).exec();
+  }
+
+  async findOne(query: Query): Promise<User | null> {
+    return await UserModel.findOne(query);
   }
 
   async findById(id: string): Promise<User | null> {
@@ -17,7 +22,6 @@ export class UserRepository implements IUserRepository {
   }
 
   async update(id: string, data: Partial<User>): Promise<User | null> {
-    console.log(id);
     return await UserModel.findByIdAndUpdate(id, data, { new: true }).exec();
   }
 

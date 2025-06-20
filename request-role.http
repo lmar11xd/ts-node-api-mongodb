@@ -1,31 +1,28 @@
-POST http://localhost:3000/api/v1/users HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTI0OWFkYzU4NjJlY2I0MGE5NDdhNCIsImVtYWlsIjoidGVzdDAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoidGVzdDAyIiwiaWF0IjoxNzUwMzc0ODg3LCJleHAiOjE3NTAzNzg0ODd9.lzMG1qybDq9CKjD66lkNPCGcuTfakH5NivN0vTd6bZs
-Content-Type: application/json
-
-{
-  "name": "Test 03",
-  "username": "test03",
-  "email": "test03@gmail.com",
-  "password": "123456"
-}
-
-###
-GET http://localhost:3000/api/v1/users HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTI0OWFkYzU4NjJlY2I0MGE5NDdhNCIsImVtYWlsIjoidGVzdDAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoidGVzdDAyIiwiaWF0IjoxNzUwMzU2MTEyLCJleHAiOjE3NTAzNTk3MTJ9.YR0Uh6KbCUCdAEs4ur_O3E8xoOf4Z0Xgg1a2LEC6PrM
-
-###
-PUT http://localhost:3000/api/v1/users/684b03171b6c62bcd8d74c5d HTTP/1.1
+POST http://localhost:3000/api/v1/roles HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTI0OWFkYzU4NjJlY2I0MGE5NDdhNCIsImVtYWlsIjoidGVzdDAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoidGVzdDAyIiwiaWF0IjoxNzUwMzU2MTEyLCJleHAiOjE3NTAzNTk3MTJ9.YR0Uh6KbCUCdAEs4ur_O3E8xoOf4Z0Xgg1a2LEC6PrM
 Content-Type: application/json
 
 {
-  "name": "Test"
+  "name": "test"
 }
 
 ###
-GET http://localhost:3000/api/v1/users/684b03171b6c62bcd8d74c5d HTTP/1.1
+GET http://localhost:3000/api/v1/roles HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTI0OWFkYzU4NjJlY2I0MGE5NDdhNCIsImVtYWlsIjoidGVzdDAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoidGVzdDAyIiwiaWF0IjoxNzUwMzU2MTEyLCJleHAiOjE3NTAzNTk3MTJ9.YR0Uh6KbCUCdAEs4ur_O3E8xoOf4Z0Xgg1a2LEC6PrM
 
 ###
-DELETE http://localhost:3000/api/v1/users/684b064e4046e4fc3b3573ab HTTP/1.1
+PUT http://localhost:3000/api/v1/roles/684b0abb87c98958bf6eb1ed HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTI0OWFkYzU4NjJlY2I0MGE5NDdhNCIsImVtYWlsIjoidGVzdDAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoidGVzdDAyIiwiaWF0IjoxNzUwMzU2MTEyLCJleHAiOjE3NTAzNTk3MTJ9.YR0Uh6KbCUCdAEs4ur_O3E8xoOf4Z0Xgg1a2LEC6PrM
+Content-Type: application/json
+
+{
+  "name": "prueba"
+}
+
+###
+GET http://localhost:3000/api/v1/roles/684b0abb87c98958bf6eb1ed HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTI0OWFkYzU4NjJlY2I0MGE5NDdhNCIsImVtYWlsIjoidGVzdDAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoidGVzdDAyIiwiaWF0IjoxNzUwMzU2MTEyLCJleHAiOjE3NTAzNTk3MTJ9.YR0Uh6KbCUCdAEs4ur_O3E8xoOf4Z0Xgg1a2LEC6PrM
+
+###
+DELETE http://localhost:3000/api/v1/roles/684b0abb87c98958bf6eb1ed HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTI0OWFkYzU4NjJlY2I0MGE5NDdhNCIsImVtYWlsIjoidGVzdDAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoidGVzdDAyIiwiaWF0IjoxNzUwMzU2MTEyLCJleHAiOjE3NTAzNTk3MTJ9.YR0Uh6KbCUCdAEs4ur_O3E8xoOf4Z0Xgg1a2LEC6PrM

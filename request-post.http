@@ -1,0 +1,27 @@
+POST http://localhost:3000/api/v1/posts HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTI0OWFkYzU4NjJlY2I0MGE5NDdhNCIsImVtYWlsIjoidGVzdDAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoidGVzdDAyIiwiaWF0IjoxNzUwMzU2MTEyLCJleHAiOjE3NTAzNTk3MTJ9.YR0Uh6KbCUCdAEs4ur_O3E8xoOf4Z0Xgg1a2LEC6PrM
+Content-Type: application/json
+
+{
+  "title": "Segundo Post",
+  "author": "Test 01"
+}
+
+###
+GET http://localhost:3000/api/v1/posts HTTP/1.1
+
+###
+PUT http://localhost:3000/api/v1/posts/684b0abb87c98958bf6eb1ed HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTI0OWFkYzU4NjJlY2I0MGE5NDdhNCIsImVtYWlsIjoidGVzdDAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoidGVzdDAyIiwiaWF0IjoxNzUwMzU2MTEyLCJleHAiOjE3NTAzNTk3MTJ9.YR0Uh6KbCUCdAEs4ur_O3E8xoOf4Z0Xgg1a2LEC6PrM
+Content-Type: application/json
+
+{
+  "name": "prueba"
+}
+
+###
+GET http://localhost:3000/api/v1/posts/684b0abb87c98958bf6eb1ed HTTP/1.1
+
+###
+DELETE http://localhost:3000/api/v1/posts/684b0abb87c98958bf6eb1ed HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTI0OWFkYzU4NjJlY2I0MGE5NDdhNCIsImVtYWlsIjoidGVzdDAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoidGVzdDAyIiwiaWF0IjoxNzUwMzU2MTEyLCJleHAiOjE3NTAzNTk3MTJ9.YR0Uh6KbCUCdAEs4ur_O3E8xoOf4Z0Xgg1a2LEC6PrM
