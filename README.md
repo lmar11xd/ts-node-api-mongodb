@@ -62,3 +62,47 @@ Configurar package.json
 ```
 
 `npm run dev`
+
+## Despliegue
+
+### Configurar tsconfig.json
+```
+"compilerOptions": {
+  "target": "ES2021",
+  "module": "CommonJS",
+}
+```
+
+### Configurar package.json
+Sin alias configurados en tsconfig.json
+```
+"main": "dist/app.js",
+"scripts": {
+  ...,
+  "build": "tsc",
+  "start": "node ./dist/app.js"
+}
+```
+
+Con alias configurados: Producción
+- `npm i module-alias`
+
+- Agregar propiedad a package.json
+```
+"_moduleAliases": {
+  "@server": "dist/server",
+  "@config": "dist/config",
+  "@controllers": "dist/controllers",
+  "@services": "dist/services",
+  "@repositories": "dist/repositories",
+  "@models": "dist/models",
+  "@routes": "dist/routes",
+  "@middlewares": "dist/middlewares"
+}
+```
+
+- Agregar dependencia en app.ts  
+`import "module-alias/register";`
+
+
+
